@@ -145,7 +145,12 @@ impl App {
             .ratio(fracf64);
         frame.render_widget(gauge, bar);
 
-        let total_estimate = elapsed_time.div_f64(fracf64);
+        let total_estimate = if (elapsed_time.as_secs_f64() / fracf64) < 86_400f64 {
+            elapsed_time.div_f64(fracf64)
+        } else {
+            // 48 minute target
+            Duration::from_mins(48)
+        };
         let remaining_estimate = total_estimate - elapsed_time;
         let elapsed_remaining_layout = Layout::default()
             .direction(Direction::Horizontal)

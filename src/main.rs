@@ -14,7 +14,7 @@ use ratatui::widgets::{Block, Gauge, Paragraph};
 
 const MODULUS: u64 = 2039; // 2(1019) + 1
 const BASE: u64 = 67;
-const EXPONENT: u64 = 10_000_000_000;
+const EXPONENT: u64 = 340_000_000_000;
 
 struct ComputationState {
     result: AtomicU64,

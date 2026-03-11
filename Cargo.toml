@@ -2,6 +2,7 @@
 name = "stupid-exponent"
 version = "0.1.0"
 edition = "2024"
+rust-version = "1.94.0"
 
 [dependencies]
 num-format = "0.4.4"
